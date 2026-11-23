@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Na Paula Loja Feminina | Moda feminina em Queimados - RJ</title>
+  <meta name="description" content="Na Paula Loja Feminina: moda feminina com estilo e preço justo no Centro de Queimados - RJ. Vestidos, conjuntos, blusas, calças e muito mais. Consulte pelo WhatsApp!" />
+  <meta name="theme-color" content="#C87D72" />
+
+  <!-- Fontes: Playfair Display (títulos) + Plus Jakarta Sans (textos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            creme: '#FAF8F5',
+            nude: '#F5EBE6',
+            grafite: '#2D2424',
+            terracota: '#C87D72',
+            terracotaDark: '#B26A5F',
+            whats: '#25D366',
+            whatsDark: '#1EBE5A'
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body { background:#FAF8F5; color:#2D2424; font-family:'Plus Jakarta Sans', sans-serif; -webkit-font-smoothing:antialiased; }
+    .reveal { opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+    @keyframes pulseRing { 0%{box-shadow:0 0 0 0 rgba(37,211,102,.55)} 70%{box-shadow:0 0 0 18px rgba(37,211,102,0)} 100%{box-shadow:0 0 0 0 rgba(37,211,102,0)} }
+    .pulse { animation:pulseRing 2.2s infinite; }
+    .product-img { transition:transform .6s ease; }
+    .product-card:hover .product-img { transform:scale(1.06); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { transition:none; opacity:1; transform:none; }
+      .pulse { animation:none; }
+      .product-img { transition:none; }
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+  <!-- =====================================================
+       1. HEADER / NAVEGAÇÃO FIXA
+  ====================================================== -->
+  <header id="topo" class="fixed top-0 inset-x-0 z-50 bg-creme/90 backdrop-blur border-b border-nude">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#inicio" class="font-serif text-2xl font-semibold text-grafite">
+        Na <span class="text-terracota italic">Paula</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium" aria-label="Navegação principal">
+        <a href="#inicio" class="hover:text-terracota transition">Início</a>
+        <a href="#colecao" class="hover:text-terracota transition">Coleção</a>
+        <a href="#sobre" class="hover:text-terracota transition">Sobre</a>
+        <a href="#localizacao" class="hover:text-terracota transition">Localização</a>
+      </nav>
+
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/5521965352890" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 bg-whats hover:bg-whatsDark text-white text-sm font-semibold px-4 py-2 rounded-full transition">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5ZM12 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22Zm5.5-7.5c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-4.1-3.6c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.800 3.800 0 0 0-1.200 2.800c0 1.700 1.200 3.300 1.400 3.500s2.400 3.700 5.800 5.100c2.100.9 2.900.9 4 .8a3.400 3.400 0 0 0 2.200-1.600 2.700 2.700 0 0 0 .2-1.600c-.1-.1-.3-.2-.6-.3Z"/></svg>
+          <span class="hidden sm:inline">WhatsApp</span><span class="sm:hidden">Chamar</span>
+        </a>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-nude" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <nav id="mobileMenu" class="hidden md:hidden bg-creme border-t border-nude px-4 py-3 space-y-1 text-sm font-medium" aria-label="Navegação mobile">
+      <a href="#inicio" class="block py-2">Início</a>
+      <a href="#colecao" class="block py-2">Coleção</a>
+      <a href="#sobre" class="block py-2">Sobre</a>
+      <a href="#localizacao" class="block py-2">Localização</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- =====================================================
+         2. HERO
+    ====================================================== -->
+    <section id="inicio" class="pt-16 bg-creme">
+      <div class="max-w-6xl mx-auto px-4 py-12 md:py-20 grid md:grid-cols-2 gap-10 items-center">
+        <div class="reveal order-2 md:order-1">
+          <span class="inline-flex items-center gap-2 bg-white border border-nude shadow-sm text-sm font-semibold px-4 py-2 rounded-full">
+            <span class="text-yellow-500" aria-hidden="true">⭐</span> 5.0 no Google
+          </span>
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold leading-tight mt-5">
+            Vista sua <span class="text-terracota italic">melhor versão</span> no coração de Queimados
+          </h1>
+          <p class="mt-5 text-lg text-grafite/75 max-w-lg">
+            Moda feminina com estilo, qualidade e preço justo. Peças que elevam a autoestima e cabem na sua rotina, com atendimento que faz você se sentir em casa.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="#colecao" class="inline-flex justify-center items-center bg-terracota hover:bg-terracotaDark text-white font-semibold px-7 py-3.5 rounded-full transition shadow-lg shadow-terracota/25">
+              Ver Catálogo
+            </a>
+            <a href="https://wa.me/5521965352890" target="_blank" rel="noopener"
+               class="inline-flex justify-center items-center gap-2 bg-whats hover:bg-whatsDark text-white font-semibold px-7 py-3.5 rounded-full transition shadow-lg shadow-whats/25">
+              Falar no WhatsApp
+            </a>
+          </div>
+          <p class="mt-5 text-sm text-grafite/60">📍 Queimados Top Center — Praça N. Sra. da Conceição, 59 - Centro</p>
+        </div>
+
+        <div class="reveal order-1 md:order-2 relative">
+          <div class="absolute -inset-3 bg-nude rounded-[2rem] rotate-2" aria-hidden="true"></div>
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80"
+               alt="Mulher usando look elegante da coleção"
+               class="relative w-full h-[380px] sm:h-[480px] object-cover rounded-[2rem] shadow-xl bg-nude"
+               onerror="this.style.visibility='hidden'" />
+          <div class="absolute -bottom-4 -left-2 sm:-left-6 bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-3">
+            <span class="text-2xl" aria-hidden="true">💐</span>
+            <div class="leading-tight">
+              <p class="text-sm font-bold">Novidades toda semana</p>
+              <p class="text-xs text-grafite/60">Peças novas chegando sempre</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         3. VITRINE / CATÁLOGO INTERATIVO
+    ====================================================== -->
+    <section id="colecao" class="bg-nude py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="text-terracota font-semibold tracking-widest text-xs uppercase">Nossa Coleção</p>
+          <h2 class="font-serif text-3xl md:text-4xl font-semibold mt-2">Inspirações e Estilos</h2>
+          <p class="mt-3 text-grafite/70">Veja alguns dos estilos que você encontra na nossa loja. Como nosso estoque gira toda semana, clique no botão para ver as novidades disponíveis no momento!</p>
+        </div>
+
+        <!-- Filtros por categoria -->
+        <div id="filtros" class="flex flex-wrap justify-center gap-2 mt-8" role="group" aria-label="Filtrar por categoria"></div>
+
+        <!-- Grade de produtos (renderizada via JS) -->
+        <div id="grade" class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mt-10"></div>
+
+        <!-- Aviso de imagens ilustrativas -->
+        <div class="mt-10 max-w-2xl mx-auto bg-white border border-terracota/30 rounded-2xl px-5 py-4 text-center shadow-sm">
+          <p class="text-sm md:text-base text-grafite/85 leading-relaxed">
+            ✨ <strong>Imagens meramente ilustrativas para inspiração.</strong> Recebemos novidades toda semana! Chame no WhatsApp para ver fotos reais das peças disponíveis hoje na loja.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         4. DIFERENCIAIS
+    ====================================================== -->
+    <section id="sobre" class="bg-creme py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="text-terracota font-semibold tracking-widest text-xs uppercase">Sobre a Na Paula</p>
+          <h2 class="font-serif text-3xl md:text-4xl font-semibold mt-2">Moda que acolhe, do jeito que você merece</h2>
+          <p class="mt-3 text-grafite/70">Mais do que uma loja, um lugar para se sentir bem, escolher com carinho e sair com a autoestima lá em cima.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-12">
+          <article class="reveal bg-white rounded-3xl p-7 shadow-sm border border-nude text-center">
+            <div class="w-14 h-14 mx-auto rounded-2xl bg-nude flex items-center justify-center text-2xl" aria-hidden="true">🤍</div>
+            <h3 class="font-serif text-xl font-semibold mt-4">Atendimento Personalizado</h3>
+            <p class="mt-2 text-sm text-grafite/70">Ajudamos você a montar looks que combinam com seu estilo, seu corpo e a ocasião, sem pressa e sem pressão.</p>
+          </article>
+          <article class="reveal bg-white rounded-3xl p-7 shadow-sm border border-nude text-center">
+            <div class="w-14 h-14 mx-auto rounded-2xl bg-nude flex items-center justify-center text-2xl" aria-hidden="true">✨</div>
+            <h3 class="font-serif text-xl font-semibold mt-4">Novidades Toda Semana</h3>
+            <p class="mt-2 text-sm text-grafite/70">Peças novas chegam o tempo todo, com as tendências do momento e preços que cabem no seu bolso.</p>
+          </article>
+          <article class="reveal bg-white rounded-3xl p-7 shadow-sm border border-nude text-center">
+            <div class="w-14 h-14 mx-auto rounded-2xl bg-nude flex items-center justify-center text-2xl" aria-hidden="true">📍</div>
+            <h3 class="font-serif text-xl font-semibold mt-4">Localização Fácil</h3>
+            <p class="mt-2 text-sm text-grafite/70">Estamos no Queimados Top Center (Praça Nossa Senhora da Conceição, 59), no Centro de Queimados, fácil de chegar e de encontrar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         5. DEPOIMENTOS / PROVA SOCIAL
+    ====================================================== -->
+    <section id="depoimentos" class="bg-nude py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center reveal">
+          <p class="text-terracota font-semibold tracking-widest text-xs uppercase">Quem compra, recomenda</p>
+          <div class="mt-3 inline-flex flex-col items-center bg-white rounded-3xl px-8 py-5 shadow-sm border border-creme">
+            <p class="font-serif text-5xl font-semibold">5.0</p>
+            <p class="text-yellow-500 text-xl tracking-widest" aria-label="5 de 5 estrelas">★★★★★</p>
+            <p class="text-xs text-grafite/60 mt-1">Avaliação no Google</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mt-10">
+          <figure class="reveal bg-white rounded-3xl p-6 shadow-sm">
+            <p class="text-yellow-500 tracking-widest" aria-label="5 estrelas">★★★★★</p>
+            <blockquote class="mt-3 text-sm text-grafite/80">“Fui atendida super bem, a Paula ajudou a escolher um conjunto lindo para um casamento. Qualidade ótima e preço justo!”</blockquote>
+            <figcaption class="mt-4 flex items-center gap-3">
+              <span class="w-10 h-10 rounded-full bg-terracota text-white flex items-center justify-center font-semibold" aria-hidden="true">M</span>
+              <span class="text-sm"><strong>Mariana S.</strong><br><span class="text-grafite/50">Cliente de Queimados</span></span>
+            </figcaption>
+          </figure>
+          <figure class="reveal bg-white rounded-3xl p-6 shadow-sm">
+            <p class="text-yellow-500 tracking-widest" aria-label="5 estrelas">★★★★★</p>
+            <blockquote class="mt-3 text-sm text-grafite/80">“Sempre tem novidade e as roupas têm um acabamento muito bom. Já virei cliente fiel, indico para todas as amigas!”</blockquote>
+            <figcaption class="mt-4 flex items-center gap-3">
+              <span class="w-10 h-10 rounded-full bg-terracota text-white flex items-center justify-center font-semibold" aria-hidden="true">J</span>
+              <span class="text-sm"><strong>Juliana A.</strong><br><span class="text-grafite/50">Cliente do Centro</span></span>
+            </figcaption>
+          </figure>
+          <figure class="reveal bg-white rounded-3xl p-6 shadow-sm">
+            <p class="text-yellow-500 tracking-widest" aria-label="5 estrelas">★★★★★</p>
+            <blockquote class="mt-3 text-sm text-grafite/80">“Achei tudo que precisava sem sair da cidade. Atendimento atencioso, peças bonitas e preço que cabe no bolso. Amei!”</blockquote>
+            <figcaption class="mt-4 flex items-center gap-3">
+              <span class="w-10 h-10 rounded-full bg-terracota text-white flex items-center justify-center font-semibold" aria-hidden="true">C</span>
+              <span class="text-sm"><strong>Camila R.</strong><br><span class="text-grafite/50">Cliente de Queimados</span></span>
+            </figcaption>
+          </figure>
+        </div>
+        <p class="text-center text-xs text-grafite/50 mt-6">Depoimentos ilustrativos.</p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         6. LOCALIZAÇÃO, HORÁRIOS E MAPA
+    ====================================================== -->
+    <section id="localizacao" class="bg-creme py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto reveal">
+          <p class="text-terracota font-semibold tracking-widest text-xs uppercase">Venha nos visitar</p>
+          <h2 class="font-serif text-3xl md:text-4xl font-semibold mt-2">Localização e horários</h2>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8 mt-10">
+          <div class="reveal bg-white rounded-3xl p-7 shadow-sm border border-nude">
+            <div id="statusLoja" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-nude" role="status" aria-live="polite">
+              <span id="statusDot" class="w-2.5 h-2.5 rounded-full bg-gray-400"></span>
+              <span id="statusTexto">Verificando horário...</span>
+            </div>
+            <p id="statusDetalhe" class="text-sm text-grafite/60 mt-2"></p>
+
+            <h3 class="font-serif text-xl font-semibold mt-6">Endereço</h3>
+            <p class="mt-1 text-grafite/80"><strong>Queimados Top Center</strong><br>Praça Nossa Senhora da Conceição, 59<br>Centro, Queimados - RJ</p>
+
+            <h3 class="font-serif text-xl font-semibold mt-6">Horário de funcionamento</h3>
+            <ul class="mt-2 text-sm divide-y divide-nude">
+              <li class="flex justify-between py-2"><span>Segunda a sexta</span><strong>9h às 18h30</strong></li>
+              <li class="flex justify-between py-2"><span>Sábado</span><strong>9h às 17h</strong></li>
+              <li class="flex justify-between py-2"><span>Domingo</span><strong class="text-terracota">Fechado</strong></li>
+            </ul>
+
+            <div class="mt-6 flex flex-col sm:flex-row gap-3">
+              <a href="https://www.google.com/maps/search/?api=1&query=Queimados+Top+Center+Praca+Nossa+Senhora+da+Conceicao+59+Queimados+RJ" target="_blank" rel="noopener"
+                 class="inline-flex justify-center items-center bg-terracota hover:bg-terracotaDark text-white font-semibold px-6 py-3 rounded-full transition">
+                Como chegar
+              </a>
+              <a href="https://wa.me/5521965352890" target="_blank" rel="noopener"
+                 class="inline-flex justify-center items-center bg-whats hover:bg-whatsDark text-white font-semibold px-6 py-3 rounded-full transition">
+                (21) 96535-2890
+              </a>
+            </div>
+          </div>
+
+          <div class="reveal rounded-3xl overflow-hidden shadow-sm border border-nude min-h-[320px] bg-nude">
+            <iframe
+              title="Mapa: Queimados Top Center - Praça Nossa Senhora da Conceição, 59, Queimados - RJ"
+              src="https://www.google.com/maps?q=Queimados+Top+Center,+Pra%C3%A7a+Nossa+Senhora+da+Concei%C3%A7%C3%A3o,+59,+Queimados,+RJ&output=embed"
+              class="w-full h-full min-h-[320px] lg:min-h-[420px]"
+              style="border:0"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Faixa final de CTA -->
+    <section class="bg-terracota text-white py-12">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="font-serif text-2xl md:text-3xl font-semibold">Achou algo que amou? A gente separa pra você.</h2>
+        <a href="https://wa.me/5521965352890?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Na%20Paula%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es!" target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 mt-6 bg-whats hover:bg-whatsDark text-white font-semibold px-8 py-3.5 rounded-full transition shadow-lg">
+          Chamar no WhatsApp
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- =====================================================
+       7. RODAPÉ
+  ====================================================== -->
+  <footer class="bg-grafite text-creme/80 pt-12 pb-8">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+      <div>
+        <p class="font-serif text-2xl text-white">Na <span class="text-terracota italic">Paula</span></p>
+        <p class="text-sm mt-2">Loja Feminina</p>
+        <p class="text-sm mt-3 text-yellow-400">★★★★★ <span class="text-creme/70">5.0 no Google</span></p>
+      </div>
+      <div>
+        <p class="font-semibold text-white mb-3">Links rápidos</p>
+        <ul class="space-y-2 text-sm">
+          <li><a class="hover:text-terracota" href="#inicio">Início</a></li>
+          <li><a class="hover:text-terracota" href="#colecao">Coleção</a></li>
+          <li><a class="hover:text-terracota" href="#sobre">Sobre</a></li>
+          <li><a class="hover:text-terracota" href="#localizacao">Localização</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-white mb-3">Contato</p>
+        <ul class="space-y-2 text-sm">
+          <li><a class="hover:text-terracota" href="https://wa.me/5521965352890" target="_blank" rel="noopener">WhatsApp: (21) 96535-2890</a></li>
+          <li>Praça Nossa Senhora da Conceição, Centro<br>Queimados - RJ</li>
+          <li>Seg a sex 9h–18h30 | Sáb 9h–17h</li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 mt-10 pt-6 border-t border-white/10 text-xs text-center text-creme/50">
+      © <span id="ano"></span> Na Paula Loja Feminina. Todos os direitos reservados.
+    </div>
+  </footer>
+
+  <!-- Botão flutuante do WhatsApp -->
+  <a href="https://wa.me/5521965352890" target="_blank" rel="noopener" aria-label="Falar com a Na Paula no WhatsApp"
+     class="pulse fixed bottom-5 right-5 z-50 w-14 h-14 rounded-full bg-whats hover:bg-whatsDark text-white flex items-center justify-center shadow-xl transition">
+    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.6 6L0 24l6.2-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5ZM12 22a10 10 0 0 1-5.1-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A10 10 0 1 1 12 22Zm5.5-7.5c-.3-.1-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-4.1-3.6c-.3-.5.3-.5.9-1.6.1-.2 0-.4 0-.5l-.9-2.1c-.2-.5-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4 3.800 3.800 0 0 0-1.200 2.800c0 1.700 1.200 3.300 1.400 3.500s2.400 3.700 5.800 5.100c2.100.9 2.900.9 4 .8a3.400 3.400 0 0 0 2.200-1.600 2.700 2.700 0 0 0 .2-1.600c-.1-.1-.3-.2-.6-.3Z"/></svg>
+  </a>
+
+  <script>
+    /* ===========================================================
+       CONFIGURAÇÕES GERAIS
+    ============================================================ */
+    const WHATSAPP_NUMERO = '5521965352890';
+
+    /* ===========================================================
+       VITRINE DE ESTILOS (fotos alinhadas com cada peça + object-position ajustado)
+       categoria: 'Vestidos' | 'Conjuntos' | 'Blusas' | 'Calças'
+    ============================================================ */
+    const produtos = [
+      {
+        id: 1,
+        nome: 'Vestido Midi Floral',
+        categoria: 'Vestidos',
+        tamanhos: ['P', 'M', 'G'],
+        img: 'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=600&q=80',
+        pos: 'object-top'
+      },
+      {
+        id: 2,
+        nome: 'Vestido Longo Fluido',
+        categoria: 'Vestidos',
+        tamanhos: ['P', 'M', 'G', 'GG'],
+        img: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=600&q=80',
+        pos: 'object-center'
+      },
+      {
+        id: 3,
+        nome: 'Conjunto Alfaiataria Bege',
+        categoria: 'Conjuntos',
+        tamanhos: ['M', 'G', 'GG'],
+        img: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=600&q=80',
+        pos: 'object-top'
+      },
+      {
+        id: 4,
+        nome: 'Conjunto Cropped e Saia',
+        categoria: 'Conjuntos',
+        tamanhos: ['P', 'M', 'G'],
+        img: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=600&q=80',
+        pos: 'object-center'
+      },
+      {
+        id: 5,
+        nome: 'Blusa Tricô Leve',
+        categoria: 'Blusas',
+        tamanhos: ['P', 'M', 'G', 'GG'],
+        img: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=600&q=80',
+        pos: 'object-center'
+      },
+      {
+        id: 6,
+        nome: 'Blusa Casual Elegante',
+        categoria: 'Blusas',
+        tamanhos: ['P', 'M', 'G'],
+        img: 'https://images.unsplash.com/photo-1564257631407-4deb1f99d992?auto=format&fit=crop&w=600&q=80',
+        pos: 'object-top'
+      },
+      {
+        id: 7,
+        nome: 'Calça Alfaiataria Preta',
+        categoria: 'Calças',
+        tamanhos: ['P', 'M', 'G', 'GG'],
+        img: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&w=600&q=80',
+        pos: 'object-bottom'
+      },
+      {
+        id: 8,
+        nome: 'Calça Pantalona Cintura Alta',
+        categoria: 'Calças',
+        tamanhos: ['M', 'G', 'GG'],
+        img: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=600&q=80',
+        pos: 'object-bottom'
+      }
+    ];
+
+    const categoriasFiltro = ['Todos', 'Vestidos', 'Conjuntos', 'Blusas', 'Calças'];
+    let categoriaAtiva = 'Todos';
+
+    function linkWhatsProduto(nome) {
+      const msg = `Olá! Vi um modelo no estilo ${nome} no site da Na Paula e gostaria de saber quais opções vocês têm disponíveis na loja hoje!`;
+      return `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(msg)}`;
+    }
+
+    function renderFiltros() {
+      const el = document.getElementById('filtros');
+      el.innerHTML = categoriasFiltro.map(cat => {
+        const ativo = cat === categoriaAtiva;
+        return `<button type="button" data-cat="${cat}" aria-pressed="${ativo}"
+          class="px-5 py-2 rounded-full text-sm font-semibold border transition ${
+            ativo ? 'bg-terracota text-white border-terracota shadow'
+                  : 'bg-white text-grafite border-creme hover:border-terracota hover:text-terracota'}">${cat}</button>`;
+      }).join('');
+    }
+
+    function renderProdutos() {
+      const lista = categoriaAtiva === 'Todos' ? produtos : produtos.filter(p => p.categoria === categoriaAtiva);
+      document.getElementById('grade').innerHTML = lista.map(p => `
+        <article class="product-card bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition flex flex-col">
+          <div class="relative aspect-[3/4] overflow-hidden bg-creme">
+            <img src="${p.img}" alt="${p.nome}" loading="lazy"
+                 class="product-img w-full h-full object-cover ${p.pos || 'object-center'}"
+                 onerror="this.style.visibility='hidden'" />
+            <span class="absolute top-3 left-3 bg-white/90 text-[11px] font-semibold px-3 py-1 rounded-full">${p.categoria}</span>
+            <span class="absolute bottom-3 left-3 bg-grafite/60 text-white text-[10px] font-medium px-2.5 py-1 rounded-full backdrop-blur-sm">Foto ilustrativa</span>
+          </div>
+          <div class="p-4 flex flex-col flex-1">
+            <h3 class="font-serif text-base md:text-lg font-semibold leading-snug">${p.nome}</h3>
+            <span class="self-start mt-2 inline-block bg-nude text-terracotaDark text-xs font-semibold px-3 py-1 rounded-full">Consulte o valor</span>
+            <div class="mt-3 flex flex-wrap gap-1" aria-label="Tamanhos de referência">
+              ${p.tamanhos.map(t => `<span class="text-[11px] font-semibold border border-nude rounded-md px-2 py-0.5 text-grafite/70">${t}</span>`).join('')}
+            </div>
+            <div class="mt-auto pt-5">
+              <a href="${linkWhatsProduto(p.nome)}" target="_blank" rel="noopener"
+                 class="flex justify-center items-center gap-2 bg-whats hover:bg-whatsDark text-white text-sm font-semibold py-2.5 px-3 rounded-full transition text-center">
+                Consultar disponibilidade
+              </a>
+            </div>
+          </div>
+        </article>`).join('');
+    }
+
+    document.getElementById('filtros').addEventListener('click', e => {
+      const btn = e.target.closest('button[data-cat]');
+      if (!btn) return;
+      categoriaAtiva = btn.dataset.cat;
+      renderFiltros();
+      renderProdutos();
+    });
+
+    /* ===========================================================
+       INDICADOR "ABERTA AGORA" / "FECHADA NO MOMENTO"
+    ============================================================ */
+    const horarios = {
+      0: null,
+      1: [9 * 60, 18 * 60 + 30],
+      2: [9 * 60, 18 * 60 + 30],
+      3: [9 * 60, 18 * 60 + 30],
+      4: [9 * 60, 18 * 60 + 30],
+      5: [9 * 60, 18 * 60 + 30],
+      6: [9 * 60, 17 * 60]
+    };
+    const nomesDias = ['domingo','segunda-feira','terça-feira','quarta-feira','quinta-feira','sexta-feira','sábado'];
+    const fmtHora = min => {
+      const h = Math.floor(min / 60), m = min % 60;
+      return m === 0 ? `${h}h` : `${h}h${String(m).padStart(2, '0')}`;
+    };
+
+    function proximaAbertura(agora) {
+      const minAtual = agora.getHours() * 60 + agora.getMinutes();
+      for (let i = 0; i < 8; i++) {
+        const dia = (agora.getDay() + i) % 7;
+        const h = horarios[dia];
+        if (!h) continue;
+        if (i === 0 && minAtual >= h[0]) continue;
+        return { quando: i === 0 ? 'hoje' : (i === 1 ? 'amanhã' : nomesDias[dia]), hora: h[0] };
+      }
+      return null;
+    }
+
+    function atualizarStatusLoja() {
+      const agora = new Date();
+      const dia = agora.getDay();
+      const min = agora.getHours() * 60 + agora.getMinutes();
+      const h = horarios[dia];
+      const aberta = h && min >= h[0] && min < h[1];
+
+      const box = document.getElementById('statusLoja');
+      const dot = document.getElementById('statusDot');
+      const txt = document.getElementById('statusTexto');
+      const det = document.getElementById('statusDetalhe');
+
+      if (aberta) {
+        box.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-green-100 text-green-800';
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse';
+        txt.textContent = 'Aberta agora';
+        det.textContent = `Atendemos até às ${fmtHora(h[1])} hoje.`;
+      } else {
+        box.className = 'inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-red-100 text-red-800';
+        dot.className = 'w-2.5 h-2.5 rounded-full bg-red-500';
+        txt.textContent = 'Fechada no momento';
+        const prox = proximaAbertura(agora);
+        det.textContent = prox ? `Voltamos ${prox.quando} às ${fmtHora(prox.hora)}.` : '';
+      }
+    }
+
+    /* ===========================================================
+       MENU MOBILE
+    ============================================================ */
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      const aberto = mobileMenu.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', String(aberto));
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    /* ===========================================================
+       ANIMAÇÃO DE ENTRADA AO ROLAR
+    ============================================================ */
+    function iniciarReveal() {
+      const itens = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) { itens.forEach(i => i.classList.add('visible')); return; }
+      const obs = new IntersectionObserver((entradas) => {
+        entradas.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); } });
+      }, { threshold: 0.12 });
+      itens.forEach(i => obs.observe(i));
+    }
+
+    document.getElementById('ano').textContent = new Date().getFullYear();
+    renderFiltros();
+    renderProdutos();
+    atualizarStatusLoja();
+    setInterval(atualizarStatusLoja, 60 * 1000);
+    iniciarReveal();
+  </script>
+</body>
+</html>
